@@ -9,16 +9,18 @@ public class OrderAgnosticBS {
         int start = 0;
         int end = arr.length-1;
         //condition to check whether array is in ascending or descending
-        boolean isAsc;
-        isAsc = arr[start] < arr[end];
+        //if it is ascending order it returns true , else false;
+       boolean isAsc = arr[start] < arr[end];
 
         //condition
         while(start <= end) {
             int mid = start + (end - start)/2;
-
+            
+         //This is the common condition in both ascending and descending order .
             if(arr[mid] == target) {
                 return mid;
             }
+            
             if(isAsc) {
                 if(target < arr[mid]) {
                     end = mid -1;
